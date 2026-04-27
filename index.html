@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+/* 讓外層容器排成一列並水平置中 */
+.container {
+  display: flex;
+  justify-content: canter;
+  align-items: center;
+  padding: 0px;
+  gap:0px;
+}
+
+/* 通用設定：固定高度 300px */
+img {
+	width:33%;
+  height: 300px;
+}
+
+/* 第一張圖：寬度 33%、圓角 18px、不變形 */
+.img-rounded {
+  width: 33%;
+  border-radius: 18px;
+   object-fit: cover;/* 這是關鍵：確保圖片不被拉伸變形 */
+}
+
+/* 第二張圖：圓形 (寬高均為 150px) */
+.img-circle {
+  width: 150px;
+  height: 150px; /* 為了變圓形，高度需改為 150px */
+  border-radius: 50%; /* 或者是設定 150px */
+  border: 1px solid #000; /* 對應圖中的 border 標註 */
+  object-fit: cover;
+}
+
+/* 第三張圖：寬度 33%、刻意變形 (distortion) */
+.img-distorted {
+  width: 33%;
+  /* 不設定 object-fit 圖片就會根據寬高比例被拉伸變形 */
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <img src="https://zh-tw.skyticket.com/guide/wp-content/uploads/2020/02/shutterstock_1457236949.jpg" alt="Paris" class="img-rounded">
+
+  <img src="https://upload.wikimedia.org/wikipedia/commons/8/86/%E5%A4%A7%E5%8A%8D%E5%B1%B1%E7%A8%9C%E8%84%88.jpg" alt="Nature" class="img-circle">
+
+  <img src="https://zh-tw.skyticket.com/guide/wp-content/uploads/2020/02/shutterstock_1457236949.jpg" alt="Paris" class="img-distorted">
+</div>
+
+</body>
+</html>
+
+
